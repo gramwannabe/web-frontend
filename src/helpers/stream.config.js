@@ -1,0 +1,1 @@
+export const streamHost = process.env.NEXT_PUBLIC_STREAM_HOST

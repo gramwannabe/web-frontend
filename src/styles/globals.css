@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+:root {
+  --bg-light: #ffffff; /* Light background color */
+  --text-light: #000000; /* Light text color */
+  
+  /* Other custom colors */
+}
