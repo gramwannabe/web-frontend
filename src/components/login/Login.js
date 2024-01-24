@@ -18,14 +18,13 @@ const Login = () => {
             setSuccessMessage(null)
             setErrorMessage(null);
             try {
-                console.log(tokenResponse)
+    
                 const response = await axios.request({
                     url: '/api/login/gmail',
                     headers: {
                         'Authorization': `Bearer ${tokenResponse.access_token}`
                     }
                 })
-                console.log(response.data.content)
                 setSuccessMessage(response.data.message)
                 localStorage.setItem(JWT_KEY, response.data.content.jwt)
                 localStorage.setItem(USER_ID_KEY, response.data.content.user_id)

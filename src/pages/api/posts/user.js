@@ -8,7 +8,7 @@ async function getPosts(userId, page){
         })
         return response.data.content.posts
     } catch (error) {
-        console.log(error)
+        console.error(error)
         throw new Error(error)
     }
 }

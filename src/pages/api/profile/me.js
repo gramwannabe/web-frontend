@@ -30,7 +30,7 @@ const get = async (req, res) => {
             }
         })
     } catch (error) {
-        console.log(error)
+        console.error(error)
         res.status(error.response ? error.response.status : 500)
             .send({
                 statusCode: error.response ? error.response.status : 500,

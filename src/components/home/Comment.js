@@ -1,10 +1,8 @@
 import { USER_ID_KEY } from "@/helpers/common.constant";
 import { streamHost } from "@/helpers/stream.config";
-import { useState } from "react";
 import { onDeleteComment } from "./home.service";
 
 const Comment = ({ item, onLoadComments }) => {
-    console.log(item)
     return (
         <div id="commentContainer" className="flex flex-row w-full">
             <div id="comment" className="flex flex-col w-full space-y-3">

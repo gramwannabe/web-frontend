@@ -10,7 +10,6 @@ const get = async (req, res) => {
                 'Authorization': `Bearer ${req.headers.authorization.split(' ')[1]}`
             }
         })
-        console.log(response.data)
         res.status(response.status).json(response.data)
     } catch (error) {
         console.error(error)

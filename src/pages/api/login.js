@@ -14,7 +14,7 @@ const post = async (req, res) => {
         })
         res.status(response.status).json(response.data)
     } catch (error) {
-        console.log(error)
+        console.error(error)
         res.status(error.response ? error.response.status : 500).json(error.response ? error.response.data : 'Internal service error')
     }
 }

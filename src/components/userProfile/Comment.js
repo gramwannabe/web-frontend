@@ -3,7 +3,6 @@ import { streamHost } from "@/helpers/stream.config";
 import { onDeleteComment } from "./userProfile.service";
 
 const Comment = ({ item, onLoadComments }) => {
-    console.log(item)
     return (
         <div id="commentContainer" className="flex flex-row w-full">
             <div id="comment" className="flex flex-col w-full space-y-3">
