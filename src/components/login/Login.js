@@ -41,7 +41,7 @@ const Login = () => {
             <Head>
                 <title>Login</title>
             </Head>
-            <div id="formContainer" className="flex flex-col border shadow rounded-md w-full p-5 space-y-5">
+            <div id="formContainer" className="flex flex-col border shadow rounded-md w-full md:w-[850px] p-5 space-y-5">
                 <div id="logoContainer" className="flex flex-row items-center justify-center font-bold">
                     Logo
                 </div>
