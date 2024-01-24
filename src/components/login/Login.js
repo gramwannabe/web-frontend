@@ -46,6 +46,16 @@ const Login = () => {
                 <div id="logoContainer" className="flex flex-row items-center justify-center font-bold">
                     Logo
                 </div>
+                <div className="flex flex-col space-y-2">
+                    {errorMessage &&
+                        <div className="border border-red-800 bg-red-100 shadow rounded-md p-2 text-red-800">
+                            {errorMessage}
+                        </div>}
+                    {successMessage &&
+                        <div className="border border-green-800 bg-green-100 shadow rounded-md p-2 text-green-800">
+                            {successMessage}
+                        </div>}
+                </div>
                 <button
                     className="flex flex-row items-center justify-center bg-blue-500 rounded-md border shadow text-white p-2 transition active:translate-y-0.5 active:duration-100"
                     onClick={onLogin}

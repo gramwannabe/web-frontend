@@ -1,0 +1,28 @@
+version: "3.1"
+
+services:
+  web-frontend:
+    build:
+      context: .
+      dockerfile: ./app.Dockerfile
+    container_name: web-frontend
+    restart: always
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    environment:
+      - BACKEND_HOST
+      - JWT_HOST
+      - MINIO_HOST
+      - MINIO_PORT
+      - MINIO_USE_SSL
+      - MINIO_ACCESS_KEY
+      - MINIO_SECRET_KEY
+      - NEXT_PUBLIC_STREAM_HOST
+      - NEXT_PUBLIC_GOOGLE_CLIENT_ID
+    networks:
+      app-net: {}
+
+networks:
+  app-net:
+    external: true
+    name: "gramwannabe-net"
