@@ -1,14 +1,14 @@
 import { JWT_KEY } from "@/helpers/common.constant"
 import axios from "axios"
 
-const StickyFooter = ({ 
-        setProgressModal, 
-        setProgress, 
-        setErrorMessage, 
-        setSuccessMessage,
-        setFilename,
-        setPostId
-    }) => {
+const StickyFooter = ({
+    setProgressModal,
+    setProgress,
+    setErrorMessage,
+    setSuccessMessage,
+    setFilename,
+    setPostId
+}) => {
     return (<div id="stickyFooter" className="flex items-center justify-center border rounded shadow p-2 fixed bottom-0 w-full md:w-3/5 bg-white min-h-12" >
         <div id="postContainer" className="border shadow rounded-full p-2 bg-white absolute -top-4 cursor-pointer">
             <label htmlFor="file-upload">

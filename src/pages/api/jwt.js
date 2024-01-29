@@ -1,9 +1,10 @@
 import { jwtHost } from "@/helpers/common.config"
 import axios from "axios"
 
-const get = async (req, res) => {
+export const get = async (req, res) => {
     try {
         const token = req.headers.authorization.split(' ')[1]
+        console.log(token);
         const response = await axios.request({
             url: `${jwtHost}/validate`,
             method: 'POST',
@@ -18,7 +19,7 @@ const get = async (req, res) => {
     }
 }
 
-const update = async (req, res) => {
+export const update = async (req, res) => {
     try {
         const token = req.headers.authorization.split(' ')[1]
         const response = await axios.request({

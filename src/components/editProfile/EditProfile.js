@@ -17,17 +17,17 @@ const EditProfile = () => {
     const [errorMessage, setErrorMessage] = useState();
     const [successMessage, setSuccessMessage] = useState();
 
-    async function onValidateToken(){
+    async function onValidateToken() {
         try {
             const jwt = localStorage.getItem(JWT_KEY)
-            const refreshTokenResponse = await refreshToken(jwt)    
+            const refreshTokenResponse = await refreshToken(jwt)
             localStorage.setItem(JWT_KEY, refreshTokenResponse.token)
         } catch (error) {
             console.error(error);
             router.push("/logout")
-        }        
+        }
     }
-    
+
     async function onLoadProfileMe() {
         try {
             const { user, message } = await onGetProfileMe()
@@ -57,6 +57,8 @@ const EditProfile = () => {
                 </label>
                 <input id="file-upload" type="file" className="hidden" onChange={async e => {
                     setUploadProfilePictureModal(true)
+                    setSuccessMessage(null)
+                    setErrorMessage(null)
                     try {
                         const file = e.target.files[0]
                         const data = new FormData();

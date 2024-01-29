@@ -1,9 +1,8 @@
 import * as Minio from "minio"
-import { backendHost, minioAccessKey, minioHost, minioPort, minioSecretKey, minioUseSsl } from '@/helpers/common.config';
+import { backendHost, jwtHost, minioAccessKey, minioHost, minioPort, minioSecretKey, minioUseSsl } from '@/helpers/common.config';
 import formidable from 'formidable';
 import { v4 as uuidv4 } from 'uuid';
 import axios from "axios";
-import { validateToken } from "@/helpers/jwt.service";
 
 export const config = {
     api: {
@@ -18,6 +17,22 @@ const minioClient = new Minio.Client({
     accessKey: minioAccessKey,
     secretKey: minioSecretKey,
 })
+
+async function validateToken(token) {
+    try {
+        const response = await axios.request({
+            url: `${jwtHost}/validate`,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: JSON.stringify({ token })
+        })
+        return response.data
+    } catch (error) {
+        throw new Error(error);
+    }
+}
 
 async function uploadToMinioObject(bucket, originalFilename, filepath, metadata) {
     try {
