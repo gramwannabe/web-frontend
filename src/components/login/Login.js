@@ -80,6 +80,7 @@ const Login = () => {
                 >
                     Login
                 </button>
+                <a className="flex flex-row justify-center items-center underline text-blue-500 text-sm" href="/register">Don't have an account ?</a>
             </div>
         </div >);
 }
