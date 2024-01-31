@@ -14,7 +14,7 @@ const ContentPosts = ({ data, setPostDetailModal, setCurrentPost, onLoadComments
                                 setCurrentPost(item)
                                 onLoadComments(item.post_id)
                             }}
-                            className="bg-gray-200 h-32 flex flex-row justify-center items-center text-sm cursor-pointer w-full"
+                            className="bg-gray-200 h-32 flex flex-row justify-center items-center text-sm cursor-pointer w-full object-center object-cover"
                         />
                     ) : (
                         <video
